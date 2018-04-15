@@ -40,6 +40,20 @@
 <button></button>
 <script>
 
+  const divs = document.querySelectorAll('div');
+
+  function logText(e) { 
+    // console.log(this); 
+    // e.stopPropagation(); 
+  }
+
+  divs.forEach(div => addEventListener('click', logText, {
+    capture: true,
+    once: true
+  }));
+
+  div.removeEventListener('click')
+
 </script>
 </body>
 </html>
